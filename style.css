@@ -26,10 +26,12 @@ h2 {
 
 h1 {
     color: aqua;
+    margin: 0;
 }
 
 h3 {
     color: white;
+    margin-bottom: 0;
 }
 
 .btn-container {
@@ -66,17 +68,40 @@ h3 {
     opacity: 0.3;
 }
 
-.gameFlash { opacity: 1; }
-.userFlash { opacity: 1; }
+.gameFlash {
+    opacity: 1;
+}
+
+.userFlash {
+    opacity: 1;
+}
 
 .game-over {
     background: #c1121f;
-    opacity: 0.5;
 }
 
+
 footer {
-  margin-top: 5rem;
-  font-size: 0.8rem;
-  color: #ccc;
-  opacity: 0.8;
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    color: #ccc;
+    opacity: 0.8;
+}
+
+.startBtn {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    opacity: 0.75;
+    margin-top: 1rem;
+}
+
+.startBtn:hover {
+    opacity: 1;
 }
