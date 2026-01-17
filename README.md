@@ -1,7 +1,7 @@
 # Simon Says Game 🎮
 
 A classic **Simon Says memory game** built with **HTML, CSS, and JavaScript**.  
-The game tests the player’s memory by generating and validating an increasing color sequence.
+The game challenges players to remember and repeat an increasing sequence of colors.
 
 ---
 
@@ -24,12 +24,12 @@ The game tests the player’s memory by generating and validating an increasing 
 ---
 
 ## 🎮 How to Play
-1. Press **Enter** to start the game  
+1. Click **Let's Play** button to start the game  
 2. Observe the color sequence  
 3. Repeat the sequence by clicking the buttons  
 4. Each correct round increases the level  
 5. A wrong input ends the game  
-6. Press **Enter** to restart  
+6. Click **Let's Play** again to restart 
 
 ---
 
