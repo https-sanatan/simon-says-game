@@ -105,3 +105,17 @@ footer {
 .startBtn:hover {
     opacity: 1;
 }
+
+.about-link{
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 0 0.5rem 0;
+}
+
+.about-link a {
+    font-size: large;
+    font-weight: bold;
+    color: red; 
+    text-decoration: none;
+}
