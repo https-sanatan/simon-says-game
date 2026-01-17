@@ -7,6 +7,7 @@ let started = false;
 let level = 0;
 
 let h2 = document.querySelector('h2');
+let startBtn = document.querySelector('.startBtn');
 
 const clickAudio = new Audio("sound/mouse-click.mp3");
 const levelUpAudio = new Audio("sound/levelUp.mp3");
@@ -14,13 +15,13 @@ const overAudio = new Audio("sound/over.mp3");
 
 clickAudio.volume = 0.6;
 levelUpAudio.volume = 0.6;
-overAudio.volume = 0.6;
+overAudio.volume = 1;
 
-document.addEventListener("keydown", (event) => {
-    if (event.code === 'Enter' && started === false) {
+startBtn.addEventListener("click", (event) => {
+    if (started === false) {
             reset();
-            console.log("game started.");
             started = true;
+            startBtn.style.display = "none";    // hide button after start   
             levelUp();
     }
 })
@@ -42,7 +43,7 @@ function levelUp() {
     //choose random button by machine   (UI)
     setTimeout(() => {
         gameFlash(randBtn);
-    }, 500);
+    }, 750);
 }
 
 //flash by the machine
@@ -51,7 +52,7 @@ function gameFlash(btn) {
 
     setTimeout(function () {
         btn.classList.remove("gameFlash");
-    }, 300);
+    }, 500);
 }
 
 //flash by the user
@@ -65,6 +66,7 @@ function userFlash(btn) {
 
 //press button by user.
 function userPress() {
+    if (!started) return; // 🚫 block clicks before start
     let btn = this;
 
     let userColor = btn.getAttribute("id");
@@ -89,7 +91,7 @@ function checkAns(idx) {
             setTimeout(levelUp, 1000);
         }
     } else {
-        h2.innerHTML = `Game Over ! Final Score <b>${level}</b> <br> Press Enter to Restart`;
+        h2.innerHTML = `Game Over ! Final Score <b>${level}</b> <br> Let's play again`;
         h2.classList.add("alert");
 
         document.body.classList.add("game-over");
@@ -101,6 +103,7 @@ function checkAns(idx) {
         highestScore(level);
         
         started = false // // ✅ game stopped, waiting for Enter 
+        startBtn.style.display = "block"; // 👈 show button again
     }
 }
 
